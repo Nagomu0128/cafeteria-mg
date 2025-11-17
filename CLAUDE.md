@@ -624,8 +624,7 @@ npm run dev
 | `npm run build` | Create production build | Before deployment, testing |
 | `npm run start` | Start production server | After build, production testing |
 | `npm run lint` | Run ESLint checks | Before commits, CI/CD |
-| `npm run format` | Format code with Prettier | Before commits, code cleanup |
-| `npm run format:check` | Check code formatting without changes | CI/CD validation |
+| `npm run lint:fix` | Fix ESLint errors and format code with Prettier | Before commits, code cleanup |
 
 ### Git Workflow
 
@@ -1121,7 +1120,7 @@ import { Order } from "@/domain/cafeteria/entities/Order";
 
 ✅ **DO:**
 - Run Prettier before committing code
-- Use `npm run format` to auto-format all files
+- Use `npm run lint:fix` to auto-fix linting issues and format all files
 - Follow Prettier's default configuration (no custom overrides unless necessary)
 - Let Prettier handle code formatting (indentation, line breaks, quotes, etc.)
 - Integrate Prettier with your IDE for format-on-save
@@ -1450,23 +1449,19 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 
 ### Formatting Code with Prettier
 
-1. **Format all files:**
+1. **Fix linting issues and format all files:**
    ```bash
-   npm run format
+   npm run lint:fix
    ```
+   This command runs ESLint with `--fix` flag and formats code with Prettier.
 
-2. **Check formatting without changes:**
-   ```bash
-   npm run format:check
-   ```
-
-3. **Format specific file or directory:**
+2. **Format specific file or directory manually:**
    ```bash
    npx prettier --write app/components/Button.tsx
    npx prettier --write "app/**/*.{ts,tsx}"
    ```
 
-4. **IDE Integration:**
+3. **IDE Integration:**
    - Install Prettier extension for your IDE
    - Enable "Format on Save" in settings
    - Prettier will auto-format on file save
@@ -1819,7 +1814,7 @@ npm update
 ### Version 2.1.0 (2025-11-17)
 - ✅ Added **Prettier** code formatter to Tech Stack
 - ✅ Added **shadcn/ui** component library to Tech Stack
-- ✅ Updated Available Scripts with Prettier commands (`format`, `format:check`)
+- ✅ Updated Available Scripts with `npm run lint:fix` command (combines ESLint fix + Prettier)
 - ✅ Added Prettier Standards section to Coding Standards
 - ✅ Added shadcn/ui Component Pattern section
 - ✅ Updated Component Organization to include `app/components/ui/` directory
