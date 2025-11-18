@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2025-11-17
 > **Project:** Cafeteria Management System
-> **Version:** 3.0.0 - Restructured Documentation
+> **Version:** 3.2.0 - Frontend Guidelines Added
 
 ---
 
@@ -188,6 +188,7 @@ cafeteria-mg/
 
 ### React
 
+- ✅ **All Frontend UI must be written in React** (React 19.2.0)
 - ✅ Server Components by default
 - ✅ Use `"use client"` only when necessary (hooks, events, browser APIs)
 - ✅ Named props interfaces
@@ -360,8 +361,16 @@ Before generating code, verify:
 4. ✅ **Use TypeScript strictly** (no `any`)
 5. ✅ **Verify layer dependencies**
 6. ✅ **Place business logic in Domain layer**
-7. ✅ **Run `npm run lint:fix` before committing**
-8. ✅ **Test locally** with `npm run dev`
+7. ✅ **Use Figma MCP to reference UI designs** when implementing components
+8. ✅ **Run `npm run lint:fix` before committing**
+9. ✅ **Test locally** with `npm run dev`
+
+### UI Implementation Guidelines
+
+- ✅ **Reference Figma designs via MCP** - Use Figma MCP to view and reference design specifications
+- ✅ **Design-driven development** - Implement UI components based on Figma designs when available
+- ✅ **Maintain design consistency** - Follow spacing, colors, typography from Figma specs
+- ✅ **Ask for Figma access** - If design specs are needed but not accessible, request Figma file/link
 
 ### Code Generation Priorities
 
@@ -411,6 +420,11 @@ Before generating code, verify:
 
 ## 📋 Documentation Changelog
 
+### Version 3.2.0 (2025-11-17)
+- ✅ **ADDED** - Frontend guidelines: All UI must be written in React
+- ✅ **ADDED** - UI Implementation Guidelines section with Figma MCP usage
+- ✅ **UPDATED** - AI Assistant guidelines to include Figma MCP for design reference
+
 ### Version 3.1.0 (2025-11-17)
 - ✅ **ELIMINATED DUPLICATION** - Removed overlapping content between `specs/` and `docs/`
 - ✅ **CONSOLIDATED** - Architecture and DDD details now in `specs/` only
@@ -442,7 +456,7 @@ Before generating code, verify:
 
 **Last Updated:** 2025-11-17
 **Maintained By:** AI Assistants working on cafeteria-mg
-**Version:** 3.1.0 - Consolidated Documentation
+**Version:** 3.2.0 - Frontend Guidelines Added
 
 ---
 
